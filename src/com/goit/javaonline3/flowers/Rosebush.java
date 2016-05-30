@@ -6,7 +6,7 @@ import java.util.List;
  * Created by Ler4enko on 27.05.2016.
  */
 public class Rosebush {
-    List<Rose> Roses;
+    private List<Rose> Roses;
 
     public List<Rose> getRoses() {
         return Roses;
