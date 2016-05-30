@@ -1,4 +1,4 @@
-package com.goit.javaonline3.Shop;
+package com.goit.javaonline3.shop;
 
 import java.util.List;
 
@@ -8,11 +8,11 @@ import java.util.List;
 public class MusicShop {
     private List<MusicInstrument> MusicInstrument;
 
-    public List<com.goit.javaonline3.Shop.MusicInstrument> getMusicInstrument() {
+    public List<com.goit.javaonline3.shop.MusicInstrument> getMusicInstrument() {
         return MusicInstrument;
     }
 
-    public void setMusicInstrument(List<com.goit.javaonline3.Shop.MusicInstrument> musicInstrument) {
+    public void setMusicInstrument(List<com.goit.javaonline3.shop.MusicInstrument> musicInstrument) {
         MusicInstrument = musicInstrument;
     }
 }
