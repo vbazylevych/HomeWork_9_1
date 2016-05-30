@@ -7,6 +7,15 @@ import java.util.List;
  */
 public class Folder {
     private List<GeneralFile> GeneralFile;
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public List<com.goit.javaonline3.files.GeneralFile> getGeneralFile() {
         return GeneralFile;

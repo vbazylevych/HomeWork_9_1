@@ -7,6 +7,7 @@ import java.util.List;
  */
 public class Rosebush {
     private List<Rose> Roses;
+    private double price;
 
     public List<Rose> getRoses() {
         return Roses;
@@ -14,5 +15,13 @@ public class Rosebush {
 
     public void setRoses(List<Rose> roses) {
         Roses = roses;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }
