@@ -8,4 +8,11 @@ import java.util.List;
 public class Rosebush {
     List<Rose> Roses;
 
+    public List<Rose> getRoses() {
+        return Roses;
+    }
+
+    public void setRoses(List<Rose> roses) {
+        Roses = roses;
+    }
 }
