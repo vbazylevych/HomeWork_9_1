@@ -17,11 +17,11 @@ public class Folder {
         this.name = name;
     }
 
-    public List<com.goit.javaonline3.files.GeneralFile> getGeneralFile() {
+    public List<GeneralFile> getGeneralFile() {
         return GeneralFile;
     }
 
-    public void setGeneralFile(List<com.goit.javaonline3.files.GeneralFile> generalFile) {
+    public void setGeneralFile(List<GeneralFile> generalFile) {
         GeneralFile = generalFile;
     }
 }

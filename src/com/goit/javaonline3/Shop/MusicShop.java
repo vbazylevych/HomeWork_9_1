@@ -8,11 +8,11 @@ import java.util.List;
 public class MusicShop {
     private List<MusicInstrument> MusicInstrument;
 
-    public List<com.goit.javaonline3.shop.MusicInstrument> getMusicInstrument() {
+    public List<MusicInstrument> getMusicInstrument() {
         return MusicInstrument;
     }
 
-    public void setMusicInstrument(List<com.goit.javaonline3.shop.MusicInstrument> musicInstrument) {
+    public void setMusicInstrument(List<MusicInstrument> musicInstrument) {
         MusicInstrument = musicInstrument;
     }
 }
