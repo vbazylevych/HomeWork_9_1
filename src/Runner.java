@@ -1,7 +1,5 @@
-import com.goit.javaonline3.shop.MusicShop;
-import com.goit.javaonline3.shop.Order;
-
-import java.util.Scanner;
+import com.goit.javaonline3.musicshop.MusicShop;
+import com.goit.javaonline3.musicshop.Order;
 
 /**
  * Created by Ler4enko on 11.06.2016.

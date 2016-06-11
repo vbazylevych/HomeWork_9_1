@@ -1,4 +1,4 @@
-package com.goit.javaonline3.shop;
+package com.goit.javaonline3.musicshop;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package com.goit.javaonline3.shop;
+package com.goit.javaonline3.musicshop;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,13 +21,13 @@ public class MusicShop {
 
         System.out.println("Congratulation! You just opened your MUSIC SHOP!!!." + "\n" + "\n");
 
-        System.out.println("Please enter how many Guitars you have in your shop: ");
+        System.out.println("Please enter how many Guitars you have in your musicshop: ");
         initialGuitarCount = GetInt.getPositiveInt();
 
-        System.out.println("Please enter how many Trumpets you have in your shop:");
+        System.out.println("Please enter how many Trumpets you have in your musicshop:");
         initialTrumpetCount = GetInt.getPositiveInt();
 
-        System.out.println("Please enter how many Piano you have in your shop:");
+        System.out.println("Please enter how many Piano you have in your musicshop:");
         initialPianoCount = GetInt.getPositiveInt();
 
         fillShop(initialGuitarCount, initialTrumpetCount, initialPianoCount);
@@ -88,17 +88,17 @@ public class MusicShop {
     private void whatWentWrong(Map<String, Integer> order) throws IllegalArgumentException{
         if (order.get("guitars") > guitars.size()) {
             throw new IllegalArgumentException("Count of wanted guitars is more than " +
-                    "currently present in the shop");
+                    "currently present in the musicshop");
         }
 
         if (order.get("trumpets") > trumpets.size()) {
             throw new IllegalArgumentException("Count of wanted trumpets is more than " +
-                    "currently present in the shop");
+                    "currently present in the musicshop");
         }
 
         if (order.get("pianos") > pianos.size()) {
             throw new IllegalArgumentException("Count of wanted pianos is more than " +
-                    "currently present in the shop");
+                    "currently present in the musicshop");
         }
     }
 
