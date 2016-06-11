@@ -8,13 +8,15 @@ public class Runner {
 
     public static void main(String[] arg) {
 
-        MusicShop musicSpop = new MusicShop();
-        musicSpop.openShop();
+        MusicShop musicShop = new MusicShop();
+        musicShop.openShop();
+        musicShop.printRestOfInstruments();
 
         Order order = new Order();
         order.createOrder();
+        order.printOrde();
 
-        musicSpop.handleOrder(order.getOrder());
-        musicSpop.getMusicInstruments();
+        musicShop.handleOrder(order.getOrder());
+        musicShop.printRestOfInstruments();
     }
 }

@@ -19,7 +19,7 @@ public class MusicShop {
         int initialPianoCount = 0;
         int initialTrumpetCount = 0;
 
-        System.out.println("Congratulation! You just opened your MUSIC SHOP!!!." + "\n" + "\n");
+        System.out.println("CONGRATULATION!YOU JUST OPENED NEW MUSIC SHOP!!!." + "\n");
 
         System.out.println("Please enter how many Guitars you have in your musicshop: ");
         initialGuitarCount = GetInt.getPositiveInt();
@@ -50,7 +50,7 @@ public class MusicShop {
         inventory();
     }
 
-    public void inventory(){
+    private void inventory(){
         musicInstruments.clear();
         musicInstruments.addAll(guitars);
         musicInstruments.addAll(trumpets);
@@ -58,27 +58,33 @@ public class MusicShop {
     }
 
     public void handleOrder(Map<String, Integer> order){
-
-        if (order.get("guitars") <= guitars.size() && order.get("trumpets") <= trumpets.size()
-                && order.get("pianos") <= pianos.size() ){
-            shipInstruments(order);
-        } else {
-            whatWentWrong(order);
+        try{
+            if (order.get("guitars") <= guitars.size() && order.get("trumpets") <= trumpets.size()
+                    && order.get("pianos") <= pianos.size() ){
+                shipInstruments(order);
+            } else {
+                whatWentWrong(order);
+            }
+        } catch (NullPointerException e){
+            System.out.println("Incorrect key for order");
+        } catch (IllegalArgumentException e){
+            System.out.println(e.getMessage());
         }
+
     }
 
     private List<MusicInstrument> shipInstruments(Map<String, Integer> order){
 
         for(int i = 0; i < order.get("guitars");i++){
-          guitars.remove(i);
+          guitars.remove(0);
         }
 
         for(int i = 0; i < order.get("trumpets");i++){
-            trumpets.remove(i);
+            trumpets.remove(0);
         }
 
         for(int i = 0; i < order.get("pianos");i++){
-            pianos.remove(i);
+            pianos.remove(0);
         }
 
         inventory();
@@ -104,5 +110,13 @@ public class MusicShop {
 
     public List<MusicInstrument> getMusicInstruments() {
         return musicInstruments;
+    }
+
+    public void printRestOfInstruments() {
+        System.out.println("Rest of instruments:");
+        System.out.println("Guitars:" + guitars.size());
+        System.out.println("Trumpet:" + trumpets.size());
+        System.out.println("Pianos:" + pianos.size());
+
     }
 }

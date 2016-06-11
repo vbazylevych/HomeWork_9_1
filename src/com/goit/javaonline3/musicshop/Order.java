@@ -21,6 +21,13 @@ public class Order {
         order.put("pianos", GetInt.getPositiveInt());
     }
 
+    public void printOrde(){
+        System.out.println("Your order:");
+        System.out.println("Guitars:" + order.get("guitars"));
+        System.out.println("Trumpet:" + order.get("trumpets"));
+        System.out.println("Pianos:" + order.get("pianos"));
+    }
+
     public Map<String, Integer> getOrder() {
         return order;
     }
