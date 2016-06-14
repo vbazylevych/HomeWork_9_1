@@ -37,3 +37,9 @@ public class GetInt {
         return correctInt;
     }
 }
+
+//GetInt - плохое название класса, соглавно code convention.
+
+//correctValueofInt, PositiveInt, CorrectValueOfInt - code convention about variable names.
+
+//if(getAnyInt() == getInt()) {rename getAnyInt();}
