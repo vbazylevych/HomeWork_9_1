@@ -8,27 +8,23 @@ import java.util.Map;
  * Created by Ler4enko on 30.05.2016.
  */
 public class MusicShop {
-    private List<MusicInstrument> musicInstruments = new ArrayList<MusicInstrument>();
-    private List<Guitar> guitars = new ArrayList<Guitar>();
-    private List<Trumpet> trumpets = new ArrayList<Trumpet>();
-    private List<Piano> pianos = new ArrayList<Piano>();
+    private final List<MusicInstrument> musicInstruments = new ArrayList<>();
+    private final List<Guitar> guitars = new ArrayList<Guitar>();
+    private final List<Trumpet> trumpets = new ArrayList<Trumpet>();
+    private final List<Piano> pianos = new ArrayList<Piano>();
 
 
     public void openShop() {
-        int initialGuitarCount = 0;
-        int initialPianoCount = 0;
-        int initialTrumpetCount = 0;
-
         System.out.println("CONGRATULATION!YOU JUST OPENED NEW MUSIC SHOP!!!." + "\n");
 
         System.out.println("Please enter how many Guitars you have in your musicshop: ");
-        initialGuitarCount = GetInt.getPositiveInt();
+        int initialGuitarCount = IntScanner.getPositiveInt();
 
         System.out.println("Please enter how many Trumpets you have in your musicshop:");
-        initialTrumpetCount = GetInt.getPositiveInt();
+        int initialTrumpetCount = IntScanner.getPositiveInt();
 
         System.out.println("Please enter how many Piano you have in your musicshop:");
-        initialPianoCount = GetInt.getPositiveInt();
+        int initialPianoCount = IntScanner.getPositiveInt();
 
         fillShop(initialGuitarCount, initialTrumpetCount, initialPianoCount);
     }
@@ -73,22 +69,21 @@ public class MusicShop {
 
     }
 
-    private List<MusicInstrument> shipInstruments(Map<String, Integer> order){
+    private void shipInstruments(Map<String, Integer> order){
 
-        for(int i = 0; i < order.get("guitars");i++){
+        for(int i = 0; i < order.get("guitars"); i++) {
           guitars.remove(0);
         }
 
-        for(int i = 0; i < order.get("trumpets");i++){
+        for(int i = 0; i < order.get("trumpets"); i++) {
             trumpets.remove(0);
         }
 
-        for(int i = 0; i < order.get("pianos");i++){
+        for(int i = 0; i < order.get("pianos"); i++) {
             pianos.remove(0);
         }
 
         inventory();
-        return musicInstruments;
     }
 
     private void whatWentWrong(Map<String, Integer> order) throws IllegalArgumentException{

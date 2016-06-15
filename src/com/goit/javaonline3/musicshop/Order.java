@@ -7,21 +7,21 @@ import java.util.Map;
  * Created by Ler4enko on 11.06.2016.
  */
 public class Order {
-    private Map<String, Integer> order = new HashMap<String, Integer>() ;
+    private final Map<String, Integer> order = new HashMap<>() ;
 
     public void createOrder() {
 
         System.out.println("Please enter how many Guitars you want buy: ");
-        order.put("guitars", GetInt.getPositiveInt());
+        order.put("guitars", IntScanner.getPositiveInt());
 
         System.out.println("Please enter how many Trumpets you want buy:");
-        order.put("trumpets",GetInt.getPositiveInt());
+        order.put("trumpets", IntScanner.getPositiveInt());
 
         System.out.println("Please enter how many Piano you you want buy");
-        order.put("pianos", GetInt.getPositiveInt());
+        order.put("pianos", IntScanner.getPositiveInt());
     }
 
-    public void printOrde(){
+    public void printOrder(){
         System.out.println("Your order:");
         System.out.println("Guitars:" + order.get("guitars"));
         System.out.println("Trumpet:" + order.get("trumpets"));
@@ -33,7 +33,7 @@ public class Order {
     }
 }
 
-//printOrde() - grammar mistake
+//printOrder() - grammar mistake
 
 //private Map<String, Integer> order = new HashMap<String, Integer>() - почему бы не сделать его final?
 

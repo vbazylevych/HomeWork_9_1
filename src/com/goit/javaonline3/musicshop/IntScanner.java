@@ -5,31 +5,31 @@ import java.util.Scanner;
 /**
  * Created by Ler4enko on 11.06.2016.
  */
-public class GetInt {
+public class IntScanner {
 
     public static int getPositiveInt() {
-        boolean correctValueofInt = false;
-        int PositiveInt = 0;
+        boolean correctValueOfInt = false;
+        int positiveInt = 0;
 
-        while(!correctValueofInt) {
-            PositiveInt = getAnyInt();
-            if (PositiveInt < 0) {
+        while(!correctValueOfInt) {
+            positiveInt = getInt();
+            if (positiveInt < 0) {
                 System.out.println("You enter value less or equal 0. Please try again.");
             } else {
-                correctValueofInt = true;
+                correctValueOfInt = true;
             }
         }
-        return PositiveInt;
+        return positiveInt;
     }
 
-    public static int getAnyInt() {
-        boolean CorrectValueOfInt = false;
+    public static int getInt() {
+        boolean correctValueOfInt = false;
         int correctInt = 0;
-        while(!CorrectValueOfInt) {
+        while(!correctValueOfInt) {
             Scanner scanner = new Scanner(System.in);
             if (scanner.hasNextInt()) {
                 correctInt = scanner.nextInt();
-                CorrectValueOfInt = true;
+                correctValueOfInt = true;
             } else {
                 System.out.println("You entered incorrect value. Please try again");
             }
@@ -38,8 +38,8 @@ public class GetInt {
     }
 }
 
-//GetInt - плохое название класса, соглавно code convention.
+//IntScanner - плохое название класса, соглавно code convention.
 
 //correctValueofInt, PositiveInt, CorrectValueOfInt - code convention about variable names.
 
-//if(getAnyInt() == getInt()) {rename getAnyInt();}
+//if(getInt() == getInt()) {rename getInt();}

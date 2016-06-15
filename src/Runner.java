@@ -14,7 +14,7 @@ public class Runner {
 
         Order order = new Order();
         order.createOrder();
-        order.printOrde();
+        order.printOrder();
 
         musicShop.handleOrder(order.getOrder());
         musicShop.printRestOfInstruments();
