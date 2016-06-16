@@ -115,16 +115,3 @@ public class MusicShop {
 
     }
 }
-
-//int initialGuitarCount = 0;
-//если можно не инициализировать явно - лучше этого не делать. Это произойдет автоматически.
-
-//for(int i = 0; i < order.get("guitars");i++) - потерялся отступ
-
-//private List<MusicInstrument> shipInstruments(Map<String, Integer> order){}  - можно сделать void
-
-//все поля этого класса можно сделать final
-
-//private List<MusicInstrument> musicInstruments = new ArrayList<MusicInstrument>();
-//==
-//private List<MusicInstrument> musicInstruments = new ArrayList<>();

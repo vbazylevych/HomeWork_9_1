@@ -32,11 +32,3 @@ public class Order {
         return order;
     }
 }
-
-//printOrder() - grammar mistake
-
-//private Map<String, Integer> order = new HashMap<String, Integer>() - почему бы не сделать его final?
-
-//private Map<String, Integer> order = new HashMap<String, Integer>();
-//==
-//private Map<String, Integer> order = new HashMap<>();

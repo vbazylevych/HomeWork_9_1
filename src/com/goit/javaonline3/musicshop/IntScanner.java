@@ -38,8 +38,7 @@ public class IntScanner {
     }
 }
 
-//IntScanner - плохое название класса, соглавно code convention.
 
-//correctValueofInt, PositiveInt, CorrectValueOfInt - code convention about variable names.
-
-//if(getInt() == getInt()) {rename getInt();}
+/*
+Объект сканнер создается каждый раз, когда нужно получить инт и никогда не закрывается
+*/
