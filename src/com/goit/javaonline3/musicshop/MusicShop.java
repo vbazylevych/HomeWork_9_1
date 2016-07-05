@@ -14,33 +14,42 @@ public class MusicShop {
     private final List<Piano> pianos = new ArrayList<Piano>();
 
 
-    public void openShop() {
+    public void openShop(MyScanner myScanner) {
         System.out.println("CONGRATULATION!YOU JUST OPENED NEW MUSIC SHOP!!!." + "\n");
 
         System.out.println("Please enter how many Guitars you have in your musicshop: ");
-        int initialGuitarCount = IntScanner.getPositiveInt();
+        int initialGuitarCount = myScanner.getPositiveInt();
 
         System.out.println("Please enter how many Trumpets you have in your musicshop:");
-        int initialTrumpetCount = IntScanner.getPositiveInt();
+        int initialTrumpetCount = myScanner.getPositiveInt();
 
         System.out.println("Please enter how many Piano you have in your musicshop:");
-        int initialPianoCount = IntScanner.getPositiveInt();
+        int initialPianoCount = myScanner.getPositiveInt();
 
-        fillShop(initialGuitarCount, initialTrumpetCount, initialPianoCount);
+        fillShop(initialGuitarCount, initialTrumpetCount, initialPianoCount, myScanner);
     }
 
-    private void fillShop(int guitarCount, int trumpetCount, int pianoCount) {
+    private void fillShop(int guitarCount, int trumpetCount, int pianoCount, MyScanner myScanner) {
 
         for (int i = 0; i < guitarCount; i++) {
-            guitars.add(new Guitar());
+
+            System.out.println("Enter producer for " + (i+1) + " guitar");
+            String producer = myScanner.getName();
+
+            System.out.println("Enter price for " + (i+1) + " guitar");
+            double price = myScanner.getDouble();
+
+           Guitar a = new Guitar(producer, price);
+            System.out.println(a.getProducer());
+            guitars.add(a);
         }
 
         for (int i = 0; i < trumpetCount; i++) {
-            trumpets.add(new Trumpet());
+           // trumpets.add(new Trumpet());
         }
 
         for (int i = 0; i < pianoCount; i++) {
-            pianos.add(new Piano());
+            //pianos.add(new Piano());
         }
 
         inventory();

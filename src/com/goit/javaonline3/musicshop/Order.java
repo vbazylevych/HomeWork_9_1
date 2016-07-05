@@ -1,5 +1,6 @@
 package com.goit.javaonline3.musicshop;
 
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,16 +10,16 @@ import java.util.Map;
 public class Order {
     private final Map<String, Integer> order = new HashMap<>() ;
 
-    public void createOrder() {
+    public void createOrder(MyScanner myScanner) {
 
         System.out.println("Please enter how many Guitars you want buy: ");
-        order.put("guitars", IntScanner.getPositiveInt());
+        order.put("guitars", myScanner.getPositiveInt());
 
         System.out.println("Please enter how many Trumpets you want buy:");
-        order.put("trumpets", IntScanner.getPositiveInt());
+        order.put("trumpets", myScanner.getPositiveInt());
 
         System.out.println("Please enter how many Piano you you want buy");
-        order.put("pianos", IntScanner.getPositiveInt());
+        order.put("pianos", myScanner.getPositiveInt());
     }
 
     public void printOrder(){

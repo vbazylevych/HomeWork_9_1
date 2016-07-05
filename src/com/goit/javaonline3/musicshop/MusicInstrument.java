@@ -5,6 +5,12 @@ package com.goit.javaonline3.musicshop;
  */
 public class MusicInstrument {
     private double price;
+    private String producer;
+
+    public MusicInstrument(double price, String producer) {
+        this.price = price;
+        this.producer = producer;
+    }
 
     public double getPrice() {
         return price;
@@ -12,5 +18,13 @@ public class MusicInstrument {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getProducer() {
+        return producer;
+    }
+
+    public void setProducer(String producer) {
+        this.producer = producer;
     }
 }
