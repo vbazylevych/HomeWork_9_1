@@ -14,8 +14,8 @@ public class Runner {
 
         MyScanner myScanner = new MyScanner();
 
-     //   MusicShop musicShop = new MusicShop();
-      //  musicShop.openShop(myScanner);
+       MusicShop musicShop = new MusicShop();
+       musicShop.openShop(myScanner);
       //  musicShop.printRestOfInstruments();
        // musicShop.printAssortment();
 
@@ -31,7 +31,7 @@ public class Runner {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 JFrame.setDefaultLookAndFeelDecorated(true);
-                MyTable.createGUI();
+                MyTable.createGUI(musicShop);
             }
         });
         myScanner.close();

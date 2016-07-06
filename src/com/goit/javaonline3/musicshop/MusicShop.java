@@ -15,7 +15,7 @@ public class MusicShop {
     private final List<Guitar> guitars = new ArrayList<Guitar>();
     private final List<Trumpet> trumpets = new ArrayList<Trumpet>();
     private final List<Piano> pianos = new ArrayList<Piano>();
-    private MusicInstrument instrument;
+//    private MusicInstrument instrument;
 
 
     public void openShop(MyScanner myScanner) {
@@ -145,25 +145,36 @@ public class MusicShop {
 
     }
 
-    public void printAssortment() {
-        System.out.println(" price " + " producer " + " type " + " color ");
+    public String[][]  printAssortment() {
+        String[][] test = new String[musicInstruments.size()][4];
 
-         for (MusicInstrument instrument: musicInstruments) {
+        for (int i = 0; i < musicInstruments.size(); i++) {
 
-            switch (instrument.getClass().getSimpleName()) {
-                case "Guitar":
-                    Guitar guitar = (Guitar) instrument;
-                    System.out.println("     " + guitar.getPrice() + "      " + "      " + guitar.getProducer() + "      " + "      " + guitar.getType() + "      " + "    ---    ");
-                    break;
-                case "Piano":
-                    Piano piano = (Piano) instrument;
-                    System.out.println(piano.getPrice() + piano.getProducer() + "---" + piano.getColor());
-                    break;
-                case "Trumpet":
-                    Trumpet trumpet = (Trumpet) instrument;
-                    System.out.println(trumpet.getPrice() + trumpet.getProducer() + "---" + "---");
-                    break;
-            }
+                switch (musicInstruments.get(i).getClass().getSimpleName()) {
+                    case "Guitar":
+                        Guitar guitar = (Guitar) musicInstruments.get(i);
+                        test[i][0] = "" + guitar.getPrice();
+                        test[i][1] =  guitar.getProducer();
+                        test[i][2] = guitar.getType();
+                        test[i][3] = "---";
+                        break;
+                    case "Piano":
+                        Piano piano = (Piano) musicInstruments.get(i);
+
+                        test[i][0] = "" + piano.getPrice();
+                        test[i][1] =  piano.getProducer();
+                        test[i][2] = "---";
+                        test[i][3] = piano.getColor();
+                        break;
+                    case "Trumpet":
+                        Trumpet trumpet = (Trumpet) musicInstruments.get(i);
+                        test[i][0] = "" + trumpet.getPrice();
+                        test[i][1] =  trumpet.getProducer();
+                        test[i][2] = "---";
+                        test[i][3] = "---";
+                        break;
+                }
         }
+        return test;
     }
 }

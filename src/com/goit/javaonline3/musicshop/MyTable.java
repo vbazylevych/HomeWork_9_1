@@ -11,22 +11,20 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 public class MyTable extends JFrame{
-    public static void createGUI() {
+    public static void createGUI(MusicShop musicShop) {
         JFrame frame = new JFrame("Test frame");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         String[] columnNames = {
                 "Name",
                 "Last modified",
+                "lera",
+                "kot"
         };
 
-        String[][] test = new String[2][2];
-        test[0][0] = "lera";
-        test[0][1] = "kot";
-        test[1][0] = "lera2";
-        test[1][1] = "kot2";
 
-        JTable table = new JTable(test, columnNames);
+
+        JTable table = new JTable(musicShop.printAssortment() , columnNames);
 
         JScrollPane scrollPane = new JScrollPane(table);
 
