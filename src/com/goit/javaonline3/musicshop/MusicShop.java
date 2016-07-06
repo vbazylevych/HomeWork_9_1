@@ -15,8 +15,10 @@ public class MusicShop {
     private final List<Guitar> guitars = new ArrayList<Guitar>();
     private final List<Trumpet> trumpets = new ArrayList<Trumpet>();
     private final List<Piano> pianos = new ArrayList<Piano>();
-//    private MusicInstrument instrument;
 
+    public List<MusicInstrument> getMusicInstruments() {
+        return musicInstruments;
+    }
 
     public void openShop(MyScanner myScanner) {
         System.out.println("CONGRATULATION!YOU JUST OPENED NEW MUSIC SHOP!!!." + "\n");
@@ -82,99 +84,54 @@ public class MusicShop {
         musicInstruments.addAll(trumpets);
         musicInstruments.addAll(pianos);
     }
+    public void sortMusicInstrumentsByPrice() {
 
-    public void handleOrder(Map<String, Integer> order){
-        try{
-            if (order.get("guitars") <= guitars.size() && order.get("trumpets") <= trumpets.size()
-                    && order.get("pianos") <= pianos.size() ){
-                shipInstruments(order);
-            } else {
-                whatWentWrong(order);
+        for (int j = musicInstruments.size() - 1; j > 0; j--) {
+            for (int i = 0; i < j; i++){
+                if(musicInstruments.get(i).getPrice() > musicInstruments.get(i+1).getPrice()) {
+                    MusicInstrument temp = musicInstruments.get(i);
+                    musicInstruments.set(i, musicInstruments.get(i+1));
+                    musicInstruments.set(i+1, temp);
+                }
             }
-        } catch (NullPointerException e){
-            System.out.println("Incorrect key for order");
-        } catch (IllegalArgumentException e){
-            System.out.println(e.getMessage());
-        }
-
-    }
-
-    private void shipInstruments(Map<String, Integer> order){
-
-        for(int i = 0; i < order.get("guitars"); i++) {
-          guitars.remove(0);
-        }
-
-        for(int i = 0; i < order.get("trumpets"); i++) {
-            trumpets.remove(0);
-        }
-
-        for(int i = 0; i < order.get("pianos"); i++) {
-            pianos.remove(0);
-        }
-
-        inventory();
-    }
-
-    private void whatWentWrong(Map<String, Integer> order) throws IllegalArgumentException{
-        if (order.get("guitars") > guitars.size()) {
-            throw new IllegalArgumentException("Count of wanted guitars is more than " +
-                    "currently present in the musicshop");
-        }
-
-        if (order.get("trumpets") > trumpets.size()) {
-            throw new IllegalArgumentException("Count of wanted trumpets is more than " +
-                    "currently present in the musicshop");
-        }
-
-        if (order.get("pianos") > pianos.size()) {
-            throw new IllegalArgumentException("Count of wanted pianos is more than " +
-                    "currently present in the musicshop");
         }
     }
 
-    public List<MusicInstrument> getMusicInstruments() {
-        return musicInstruments;
-    }
-
-    public void printRestOfInstruments() {
-        System.out.println("Rest of instruments:");
-        System.out.println("Guitars:" + guitars.size());
-        System.out.println("Trumpet:" + trumpets.size());
-        System.out.println("Pianos:" + pianos.size());
-
-    }
-
-    public String[][]  printAssortment() {
-        String[][] test = new String[musicInstruments.size()][4];
+    public String[][] prepareAssortmentTable() {
+        String[][] dataTable = new String[musicInstruments.size()][5];
 
         for (int i = 0; i < musicInstruments.size(); i++) {
 
                 switch (musicInstruments.get(i).getClass().getSimpleName()) {
                     case "Guitar":
                         Guitar guitar = (Guitar) musicInstruments.get(i);
-                        test[i][0] = "" + guitar.getPrice();
-                        test[i][1] =  guitar.getProducer();
-                        test[i][2] = guitar.getType();
-                        test[i][3] = "---";
+
+                        dataTable[i][0] = "Guitar";
+                        dataTable[i][1] = "" + guitar.getPrice();
+                        dataTable[i][2] =  guitar.getProducer();
+                        dataTable[i][3] = guitar.getType();
+                        dataTable[i][4] = "---";
                         break;
                     case "Piano":
                         Piano piano = (Piano) musicInstruments.get(i);
 
-                        test[i][0] = "" + piano.getPrice();
-                        test[i][1] =  piano.getProducer();
-                        test[i][2] = "---";
-                        test[i][3] = piano.getColor();
+                        dataTable[i][0] = "Piano";
+                        dataTable[i][1] = "" + piano.getPrice();
+                        dataTable[i][2] =  piano.getProducer();
+                        dataTable[i][3] = "---";
+                        dataTable[i][4] = piano.getColor();
                         break;
                     case "Trumpet":
                         Trumpet trumpet = (Trumpet) musicInstruments.get(i);
-                        test[i][0] = "" + trumpet.getPrice();
-                        test[i][1] =  trumpet.getProducer();
-                        test[i][2] = "---";
-                        test[i][3] = "---";
+
+                        dataTable[i][0] = "Trumpet";
+                        dataTable[i][1] = "" + trumpet.getPrice();
+                        dataTable[i][2] = trumpet.getProducer();
+                        dataTable[i][3] = "---";
+                        dataTable[i][4] = "---";
                         break;
                 }
         }
-        return test;
+        return dataTable;
     }
 }

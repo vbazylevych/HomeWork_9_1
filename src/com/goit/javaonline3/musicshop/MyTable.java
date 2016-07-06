@@ -12,19 +12,18 @@ import javax.swing.JTable;
 
 public class MyTable extends JFrame{
     public static void createGUI(MusicShop musicShop) {
-        JFrame frame = new JFrame("Test frame");
+        JFrame frame = new JFrame("Music Shop");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         String[] columnNames = {
                 "Name",
-                "Last modified",
-                "lera",
-                "kot"
+                "Price",
+                "Producer",
+                "Type",
+                "Color"
         };
 
-
-
-        JTable table = new JTable(musicShop.printAssortment() , columnNames);
+        JTable table = new JTable(musicShop.prepareAssortmentTable(), columnNames);
 
         JScrollPane scrollPane = new JScrollPane(table);
 
@@ -33,7 +32,5 @@ public class MyTable extends JFrame{
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-
-
     }
 }

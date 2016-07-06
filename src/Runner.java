@@ -1,7 +1,6 @@
 import com.goit.javaonline3.musicshop.MusicShop;
 import com.goit.javaonline3.musicshop.MyScanner;
 import com.goit.javaonline3.musicshop.MyTable;
-import com.goit.javaonline3.musicshop.Order;
 
 import javax.swing.*;
 
@@ -11,22 +10,11 @@ import javax.swing.*;
 public class Runner {
 
     public static void main(String[] arg) {
-
         MyScanner myScanner = new MyScanner();
 
-       MusicShop musicShop = new MusicShop();
-       musicShop.openShop(myScanner);
-      //  musicShop.printRestOfInstruments();
-       // musicShop.printAssortment();
-
-        /*Order order = new Order();
-        order.createOrder(myScanner);
-        order.printOrder();
-
-        musicShop.handleOrder(order.getOrder());
-        musicShop.printRestOfInstruments(); */
-
-
+        MusicShop musicShop = new MusicShop();
+        musicShop.openShop(myScanner);
+        musicShop.sortMusicInstrumentsByPrice();
 
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
@@ -34,6 +22,7 @@ public class Runner {
                 MyTable.createGUI(musicShop);
             }
         });
+
         myScanner.close();
     }
 }
