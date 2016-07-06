@@ -66,7 +66,7 @@ public class MyScanner {
         }
     }
 
-    public String getName() {
+    public String getString() {
         while(true) {
 
             if (scanner.hasNext()) {

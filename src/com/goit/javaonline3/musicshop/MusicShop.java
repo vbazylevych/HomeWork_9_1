@@ -1,6 +1,9 @@
 package com.goit.javaonline3.musicshop;
 
+import java.awt.Dimension;
+import javax.swing.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
@@ -12,6 +15,7 @@ public class MusicShop {
     private final List<Guitar> guitars = new ArrayList<Guitar>();
     private final List<Trumpet> trumpets = new ArrayList<Trumpet>();
     private final List<Piano> pianos = new ArrayList<Piano>();
+    private MusicInstrument instrument;
 
 
     public void openShop(MyScanner myScanner) {
@@ -34,22 +38,39 @@ public class MusicShop {
         for (int i = 0; i < guitarCount; i++) {
 
             System.out.println("Enter producer for " + (i+1) + " guitar");
-            String producer = myScanner.getName();
+            String producer = myScanner.getString();
 
             System.out.println("Enter price for " + (i+1) + " guitar");
             double price = myScanner.getDouble();
 
-           Guitar a = new Guitar(producer, price);
-            System.out.println(a.getProducer());
-            guitars.add(a);
+            System.out.println("Enter type for " + (i+1) + " guitar");
+            String type = myScanner.getString();
+
+            guitars.add(new Guitar(producer, price, type));
         }
 
         for (int i = 0; i < trumpetCount; i++) {
-           // trumpets.add(new Trumpet());
+            System.out.println("Enter producer for " + (i+1) + " trumpet");
+            String producer = myScanner.getString();
+
+            System.out.println("Enter price for " + (i+1) + " trumpet");
+            double price = myScanner.getDouble();
+
+            trumpets.add(new Trumpet(producer, price));
         }
 
         for (int i = 0; i < pianoCount; i++) {
-            //pianos.add(new Piano());
+
+            System.out.println("Enter producer for " + (i+1) + " piano");
+            String producer = myScanner.getString();
+
+            System.out.println("Enter price for " + (i+1) + " piano");
+            double price = myScanner.getDouble();
+
+            System.out.println("Enter color for " + (i+1) + " piano");
+            String color = myScanner.getString();
+
+            pianos.add(new Piano(producer, price, color));
         }
 
         inventory();
@@ -122,5 +143,27 @@ public class MusicShop {
         System.out.println("Trumpet:" + trumpets.size());
         System.out.println("Pianos:" + pianos.size());
 
+    }
+
+    public void printAssortment() {
+        System.out.println(" price " + " producer " + " type " + " color ");
+
+         for (MusicInstrument instrument: musicInstruments) {
+
+            switch (instrument.getClass().getSimpleName()) {
+                case "Guitar":
+                    Guitar guitar = (Guitar) instrument;
+                    System.out.println("     " + guitar.getPrice() + "      " + "      " + guitar.getProducer() + "      " + "      " + guitar.getType() + "      " + "    ---    ");
+                    break;
+                case "Piano":
+                    Piano piano = (Piano) instrument;
+                    System.out.println(piano.getPrice() + piano.getProducer() + "---" + piano.getColor());
+                    break;
+                case "Trumpet":
+                    Trumpet trumpet = (Trumpet) instrument;
+                    System.out.println(trumpet.getPrice() + trumpet.getProducer() + "---" + "---");
+                    break;
+            }
+        }
     }
 }
