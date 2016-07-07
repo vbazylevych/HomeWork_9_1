@@ -20,43 +20,43 @@ public class MusicShop {
         return musicInstruments;
     }
 
-    public void openShop(MyScanner myScanner) {
+    public void openShop() {
         System.out.println("CONGRATULATION!YOU JUST OPENED NEW MUSIC SHOP!!!." + "\n");
 
         System.out.println("Please enter how many Guitars you have in your musicshop: ");
-        int initialGuitarCount = myScanner.getPositiveInt();
+        int initialGuitarCount = MyScanner.getPositiveInt();
 
         System.out.println("Please enter how many Trumpets you have in your musicshop:");
-        int initialTrumpetCount = myScanner.getPositiveInt();
+        int initialTrumpetCount = MyScanner.getPositiveInt();
 
         System.out.println("Please enter how many Piano you have in your musicshop:");
-        int initialPianoCount = myScanner.getPositiveInt();
+        int initialPianoCount = MyScanner.getPositiveInt();
 
-        fillShop(initialGuitarCount, initialTrumpetCount, initialPianoCount, myScanner);
+        fillShop(initialGuitarCount, initialTrumpetCount, initialPianoCount);
     }
 
-    private void fillShop(int guitarCount, int trumpetCount, int pianoCount, MyScanner myScanner) {
+    private void fillShop(int guitarCount, int trumpetCount, int pianoCount) {
 
         for (int i = 0; i < guitarCount; i++) {
 
             System.out.println("Enter producer for " + (i+1) + " guitar");
-            String producer = myScanner.getString();
+            String producer = MyScanner.getString();
 
             System.out.println("Enter price for " + (i+1) + " guitar");
-            double price = myScanner.getDouble();
+            double price = MyScanner.getDouble();
 
             System.out.println("Enter type for " + (i+1) + " guitar");
-            String type = myScanner.getString();
+            String type = MyScanner.getString();
 
             guitars.add(new Guitar(producer, price, type));
         }
 
         for (int i = 0; i < trumpetCount; i++) {
             System.out.println("Enter producer for " + (i+1) + " trumpet");
-            String producer = myScanner.getString();
+            String producer = MyScanner.getString();
 
             System.out.println("Enter price for " + (i+1) + " trumpet");
-            double price = myScanner.getDouble();
+            double price = MyScanner.getDouble();
 
             trumpets.add(new Trumpet(producer, price));
         }
@@ -64,13 +64,13 @@ public class MusicShop {
         for (int i = 0; i < pianoCount; i++) {
 
             System.out.println("Enter producer for " + (i+1) + " piano");
-            String producer = myScanner.getString();
+            String producer = MyScanner.getString();
 
             System.out.println("Enter price for " + (i+1) + " piano");
-            double price = myScanner.getDouble();
+            double price = MyScanner.getDouble();
 
             System.out.println("Enter color for " + (i+1) + " piano");
-            String color = myScanner.getString();
+            String color = MyScanner.getString();
 
             pianos.add(new Piano(producer, price, color));
         }

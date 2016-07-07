@@ -9,11 +9,11 @@ public class MyScanner {
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    public void close() {
+    public static void close() {
         scanner.close();
     }
 
-    public int getPositiveInt() {
+    public static int getPositiveInt() {
 
         while(true) {
             int PositiveInt = getInt();
@@ -26,7 +26,7 @@ public class MyScanner {
         }
     }
 
-    public int getInt() {
+    public static int getInt() {
 
         while(true) {
 
@@ -40,7 +40,7 @@ public class MyScanner {
         }
     }
 
-    public double getPositiveDouble() {
+    public static double getPositiveDouble() {
 
         while(true) {
             double positiveDouble = getDouble();
@@ -52,7 +52,7 @@ public class MyScanner {
         }
     }
 
-    public double getDouble() {
+    public static double getDouble() {
 
         while(true) {
 
@@ -66,7 +66,7 @@ public class MyScanner {
         }
     }
 
-    public String getString() {
+    public static String getString() {
         while(true) {
 
             if (scanner.hasNext()) {

@@ -10,10 +10,9 @@ import javax.swing.*;
 public class Runner {
 
     public static void main(String[] arg) {
-        MyScanner myScanner = new MyScanner();
 
         MusicShop musicShop = new MusicShop();
-        musicShop.openShop(myScanner);
+        musicShop.openShop();
         musicShop.sortMusicInstrumentsByPrice();
 
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
@@ -23,6 +22,6 @@ public class Runner {
             }
         });
 
-        myScanner.close();
+        MyScanner.close();
     }
 }
