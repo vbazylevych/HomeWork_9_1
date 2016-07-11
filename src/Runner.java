@@ -14,7 +14,7 @@ public class Runner {
 
         MusicShop musicShop = new MusicShop();
         musicShop.openShop();
-
+        System.out.println("Look on Table!");
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 JFrame.setDefaultLookAndFeelDecorated(true);
