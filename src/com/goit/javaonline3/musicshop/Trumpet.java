@@ -7,7 +7,7 @@ import java.util.HashSet;
  */
 public class Trumpet extends MusicInstrument{
 
-    public Trumpet(String producer, double price) {
-        super(price, producer);
+    public Trumpet(String producer) {
+        super(producer);
     }
 }

@@ -6,9 +6,8 @@ package com.goit.javaonline3.musicshop;
 public class Guitar extends MusicInstrument {
     private String type;
 
-    public Guitar(String producer, double price, String type) {
-        super(price, producer);
-        this.type = type;
+    public Guitar(String producer) {
+        super(producer);
     }
 
     public String getType() {

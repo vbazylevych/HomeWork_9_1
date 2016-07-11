@@ -23,13 +23,10 @@ public class MusicShop {
     public void openShop() {
         System.out.println("CONGRATULATION!YOU JUST OPENED NEW MUSIC SHOP!!!." + "\n");
 
-        System.out.println("Please enter how many Guitars you have in your musicshop: ");
+        System.out.println("Please enter how many Guitars, Trumpets, Pianos you have in your musicshop: ");
+
         int initialGuitarCount = MyScanner.getPositiveInt();
-
-        System.out.println("Please enter how many Trumpets you have in your musicshop:");
         int initialTrumpetCount = MyScanner.getPositiveInt();
-
-        System.out.println("Please enter how many Piano you have in your musicshop:");
         int initialPianoCount = MyScanner.getPositiveInt();
 
         fillShop(initialGuitarCount, initialTrumpetCount, initialPianoCount);
@@ -42,23 +39,15 @@ public class MusicShop {
             System.out.println("Enter producer for " + (i+1) + " guitar");
             String producer = MyScanner.getString();
 
-            System.out.println("Enter price for " + (i+1) + " guitar");
-            double price = MyScanner.getDouble();
-
-            System.out.println("Enter type for " + (i+1) + " guitar");
-            String type = MyScanner.getString();
-
-            guitars.add(new Guitar(producer, price, type));
+            guitars.add(new Guitar(producer));
         }
 
         for (int i = 0; i < trumpetCount; i++) {
+
             System.out.println("Enter producer for " + (i+1) + " trumpet");
             String producer = MyScanner.getString();
 
-            System.out.println("Enter price for " + (i+1) + " trumpet");
-            double price = MyScanner.getDouble();
-
-            trumpets.add(new Trumpet(producer, price));
+            trumpets.add(new Trumpet(producer));
         }
 
         for (int i = 0; i < pianoCount; i++) {
@@ -66,13 +55,7 @@ public class MusicShop {
             System.out.println("Enter producer for " + (i+1) + " piano");
             String producer = MyScanner.getString();
 
-            System.out.println("Enter price for " + (i+1) + " piano");
-            double price = MyScanner.getDouble();
-
-            System.out.println("Enter color for " + (i+1) + " piano");
-            String color = MyScanner.getString();
-
-            pianos.add(new Piano(producer, price, color));
+            pianos.add(new Piano(producer));
         }
 
         inventory();
@@ -84,53 +67,16 @@ public class MusicShop {
         musicInstruments.addAll(trumpets);
         musicInstruments.addAll(pianos);
     }
-    public void sortMusicInstrumentsByPrice() {
 
-        for (int j = musicInstruments.size() - 1; j > 0; j--) {
-            for (int i = 0; i < j; i++){
-                if(musicInstruments.get(i).getPrice() > musicInstruments.get(i+1).getPrice()) {
-                    MusicInstrument temp = musicInstruments.get(i);
-                    musicInstruments.set(i, musicInstruments.get(i+1));
-                    musicInstruments.set(i+1, temp);
-                }
-            }
-        }
-    }
-
-    public String[][] prepareAssortmentTable() {
-        String[][] dataTable = new String[musicInstruments.size()][5];
+    public String[][] prepareDataForTable() {
+        String[][] dataTable = new String[musicInstruments.size()][3];
+        Ceasar ceasar = new Ceasar();
 
         for (int i = 0; i < musicInstruments.size(); i++) {
 
-                switch (musicInstruments.get(i).getClass().getSimpleName()) {
-                    case "Guitar":
-                        Guitar guitar = (Guitar) musicInstruments.get(i);
-
-                        dataTable[i][0] = "Guitar";
-                        dataTable[i][1] = "" + guitar.getPrice();
-                        dataTable[i][2] =  guitar.getProducer();
-                        dataTable[i][3] = guitar.getType();
-                        dataTable[i][4] = "---";
-                        break;
-                    case "Piano":
-                        Piano piano = (Piano) musicInstruments.get(i);
-
-                        dataTable[i][0] = "Piano";
-                        dataTable[i][1] = "" + piano.getPrice();
-                        dataTable[i][2] =  piano.getProducer();
-                        dataTable[i][3] = "---";
-                        dataTable[i][4] = piano.getColor();
-                        break;
-                    case "Trumpet":
-                        Trumpet trumpet = (Trumpet) musicInstruments.get(i);
-
-                        dataTable[i][0] = "Trumpet";
-                        dataTable[i][1] = "" + trumpet.getPrice();
-                        dataTable[i][2] = trumpet.getProducer();
-                        dataTable[i][3] = "---";
-                        dataTable[i][4] = "---";
-                        break;
-                }
+            dataTable[i][0] = musicInstruments.get(i).getProducer();
+            dataTable[i][1] = ceasar.encript(dataTable[i][0]).toString();
+            dataTable[i][2] = ceasar.decrypt(dataTable[i][1]).toString();
         }
         return dataTable;
     }

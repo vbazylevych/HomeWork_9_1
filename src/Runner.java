@@ -4,6 +4,7 @@ import com.goit.javaonline3.musicshop.MyTable;
 
 import javax.swing.*;
 
+
 /**
  * Created by Ler4enko on 11.06.2016.
  */
@@ -13,7 +14,6 @@ public class Runner {
 
         MusicShop musicShop = new MusicShop();
         musicShop.openShop();
-        musicShop.sortMusicInstrumentsByPrice();
 
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
