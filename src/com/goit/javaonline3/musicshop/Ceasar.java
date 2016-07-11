@@ -29,7 +29,7 @@ public class Ceasar {
         };
     }
 
-    public static StringBuilder encript(String text){
+    public  StringBuilder encript(String text){
       StringBuilder encriptedText = new StringBuilder();
 
       for(int i = 0; i < text.length(); i++) {
@@ -45,7 +45,7 @@ public class Ceasar {
       return encriptedText;
     }
 
-    public static int findNewSymbolPositionForEncripting(int currentSymbolPosition){
+    public int findNewSymbolPositionForEncripting(int currentSymbolPosition){
 
         if (currentSymbolPosition <= artificialAlphabet.size() - shift - 1) {
             return currentSymbolPosition + 3;
@@ -54,7 +54,7 @@ public class Ceasar {
         }
     }
 
-    public static StringBuilder decrypt(String text){
+    public StringBuilder decrypt(String text){
         StringBuilder encriptedText = new StringBuilder();
 
         for(int i = 0; i < text.length(); i++) {
@@ -70,7 +70,7 @@ public class Ceasar {
         return encriptedText;
     }
 
-    public static int findOldSymbolPositionForEncripting(int currentSymbolPosition){
+    public int findOldSymbolPositionForEncripting(int currentSymbolPosition){
 
         if (currentSymbolPosition <= shift - 1) {
             return artificialAlphabet.size() - shift + currentSymbolPosition;
@@ -79,7 +79,7 @@ public class Ceasar {
         }
     }
 
-    public static ArrayList<Character> getArtificialAlphabet() {
+    public ArrayList<Character> getArtificialAlphabet() {
         return artificialAlphabet;
     }
 
@@ -87,11 +87,11 @@ public class Ceasar {
         Ceasar.artificialAlphabet = artificialAlphabet;
     }
 
-    public static int getShift() {
+    public int getShift() {
         return shift;
     }
 
-    public static void setShift(int shift) {
+    public void setShift(int shift) {
         Ceasar.shift = shift;
     }
 }
