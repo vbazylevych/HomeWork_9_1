@@ -12,9 +12,9 @@ import java.util.Map;
  */
 public class MusicShop {
     private final List<MusicInstrument> musicInstruments = new ArrayList<>();
-    private final List<Guitar> guitars = new ArrayList<Guitar>();
-    private final List<Trumpet> trumpets = new ArrayList<Trumpet>();
-    private final List<Piano> pianos = new ArrayList<Piano>();
+    private final List<Guitar> guitars = new ArrayList<>();
+    private final List<Trumpet> trumpets = new ArrayList<>();
+    private final List<Piano> pianos = new ArrayList<>();
 
     public List<MusicInstrument> getMusicInstruments() {
         return musicInstruments;

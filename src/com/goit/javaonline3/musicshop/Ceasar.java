@@ -7,8 +7,8 @@ import java.util.ArrayList;
  */
 public class Ceasar {
 
-    public static ArrayList<Character> artificialAlphabet = new ArrayList<Character>();
-    public static int shift = 3;
+    public static final ArrayList<Character> artificialAlphabet = new ArrayList<Character>();
+    public static final int shift = 3;
 
     public Ceasar() {
 
@@ -29,7 +29,7 @@ public class Ceasar {
         }
     }
 
-    public  StringBuilder encript(String text){
+    public StringBuilder encript(String text){
       StringBuilder encriptedText = new StringBuilder();
 
       for (int i = 0; i < text.length(); i++) {
@@ -45,7 +45,7 @@ public class Ceasar {
       return encriptedText;
     }
 
-    public int findNewSymbolPositionForEncripting(int currentSymbolPosition){
+    private int findNewSymbolPositionForEncripting(int currentSymbolPosition){
 
         if (currentSymbolPosition <= artificialAlphabet.size() - shift - 1) {
             return currentSymbolPosition + 3;
@@ -70,7 +70,7 @@ public class Ceasar {
         return encriptedText;
     }
 
-    public int findOldSymbolPositionForEncripting(int currentSymbolPosition){
+    private int findOldSymbolPositionForEncripting(int currentSymbolPosition){
 
         if (currentSymbolPosition <= shift - 1) {
             return artificialAlphabet.size() - shift + currentSymbolPosition;
@@ -83,17 +83,10 @@ public class Ceasar {
         return artificialAlphabet;
     }
 
-    public static void setArtificialAlphabet(ArrayList<Character> artificialAlphabet) {
-        Ceasar.artificialAlphabet = artificialAlphabet;
-    }
-
     public int getShift() {
         return shift;
     }
 
-    public void setShift(int shift) {
-        Ceasar.shift = shift;
-    }
 }
 
 
