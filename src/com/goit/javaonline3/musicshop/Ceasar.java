@@ -32,14 +32,14 @@ public class Ceasar {
     public  StringBuilder encript(String text){
       StringBuilder encriptedText = new StringBuilder();
 
-      for(int i = 0; i < text.length(); i++) {
+      for (int i = 0; i < text.length(); i++) {
           char symbol = text.charAt(i);
           int currentSymbolPosition = artificialAlphabet.indexOf(symbol);
 
-          if(currentSymbolPosition >= 0) {
+          if (currentSymbolPosition >= 0) {
               encriptedText.append(artificialAlphabet.get(findNewSymbolPositionForEncripting(currentSymbolPosition)));
           } else {
-              encriptedText.append( text.charAt(i));
+              encriptedText.append(text.charAt(i));
           }
       }
       return encriptedText;
@@ -57,11 +57,11 @@ public class Ceasar {
     public StringBuilder decrypt(String text){
         StringBuilder encriptedText = new StringBuilder();
 
-        for(int i = 0; i < text.length(); i++) {
+        for (int i = 0; i < text.length(); i++) {
             char symbol = text.charAt(i);
             int currentSymbolPosition = artificialAlphabet.indexOf(symbol);
 
-            if(currentSymbolPosition >= 0) {
+            if (currentSymbolPosition >= 0) {
                 encriptedText.append(artificialAlphabet.get(findOldSymbolPositionForEncripting(currentSymbolPosition)));
             } else {
                 encriptedText.append( text.charAt(i));
