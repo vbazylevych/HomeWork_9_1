@@ -31,8 +31,7 @@ public class MyScanner {
         while(true) {
 
             if (scanner.hasNextInt()) {
-                int userInput = scanner.nextInt();
-                return userInput;
+                return scanner.nextInt();
             } else {
                 System.out.println("You entered incorrect value. Please try again");
                 scanner.next();
@@ -57,8 +56,7 @@ public class MyScanner {
         while(true) {
 
             if (scanner.hasNextDouble()) {
-                double userInput = scanner.nextDouble();
-                return userInput;
+                return scanner.nextDouble();
             } else {
                 System.out.println("You entered incorrect value. Please try again");
                 scanner.next();
@@ -70,8 +68,7 @@ public class MyScanner {
         while(true) {
 
             if (scanner.hasNext()) {
-                String userInput = scanner.next();
-                return userInput;
+                return scanner.next();
             } else {
                 System.out.println("You entered incorrect value. Please try again");
                 scanner.next();
