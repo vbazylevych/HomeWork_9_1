@@ -16,12 +16,12 @@ public class MyScanner {
     public static int getPositiveInt() {
 
         while(true) {
-            int PositiveInt = getInt();
+            int positiveInt = getInt();
 
-            if (PositiveInt < 0) {
+            if (positiveInt < 0) {
                 System.out.println("You enter value less or equal 0. Please try again.");
             } else {
-                return PositiveInt;
+                return positiveInt;
             }
         }
     }
