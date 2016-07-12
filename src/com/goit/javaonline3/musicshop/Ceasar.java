@@ -14,19 +14,19 @@ public class Ceasar {
 
         for (char symbol = 'a'; symbol <= 'z'; symbol++) {
             artificialAlphabet.add(symbol);
-        };
+        }
 
         for (char symbol = 'A'; symbol <= 'Z'; symbol++) {
             artificialAlphabet.add(symbol);
-        };
+        }
 
         for (char symbol = 'а'; symbol <= 'я'; symbol++) {
             artificialAlphabet.add(symbol);
-        };
+        }
 
         for (char symbol = 'А'; symbol <= 'Я'; symbol++) {
             artificialAlphabet.add(symbol);
-        };
+        }
     }
 
     public  StringBuilder encript(String text){
