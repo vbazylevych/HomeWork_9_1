@@ -11,7 +11,7 @@ import javax.swing.JTable;
 
 public class MyTable {
     public static void createGUI(MusicShop musicShop) {
-        JFrame frame = new JFrame("Ceasar Work");
+        JFrame frame = new JFrame("Caesar Work");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         String[] columnNames = {

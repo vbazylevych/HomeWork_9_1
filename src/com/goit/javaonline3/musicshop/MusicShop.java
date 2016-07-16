@@ -1,11 +1,7 @@
 package com.goit.javaonline3.musicshop;
 
-import java.awt.Dimension;
-import javax.swing.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Ler4enko on 30.05.2016.
@@ -70,13 +66,13 @@ public class MusicShop {
 
     public String[][] prepareDataForTable() {
         String[][] dataTable = new String[musicInstruments.size()][3];
-        Ceasar ceasar = new Ceasar();
+        Caesar caesar = new Caesar();
 
         for (int i = 0; i < musicInstruments.size(); i++) {
 
             dataTable[i][0] = musicInstruments.get(i).getProducer();
-            dataTable[i][1] = ceasar.encript(dataTable[i][0]).toString();
-            dataTable[i][2] = ceasar.decrypt(dataTable[i][1]).toString();
+            dataTable[i][1] = caesar.encript(dataTable[i][0]).toString();
+            dataTable[i][2] = caesar.decrypt(dataTable[i][1]).toString();
         }
         return dataTable;
     }

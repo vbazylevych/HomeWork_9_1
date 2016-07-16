@@ -5,12 +5,12 @@ import java.util.ArrayList;
 /**
  * Created by vbazylevych on 7/8/2016.
  */
-public class Ceasar {
+public class Caesar {
 
     public static final ArrayList<Character> artificialAlphabet = new ArrayList<Character>();
     public static final int shift = 3;
 
-    public Ceasar() {
+    public Caesar() {
 
         for (char symbol = 'a'; symbol <= 'z'; symbol++) {
             artificialAlphabet.add(symbol);
