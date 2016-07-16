@@ -7,10 +7,10 @@ import java.util.ArrayList;
  */
 public class Caesar {
 
-    public static final ArrayList<Character> artificialAlphabet = new ArrayList<Character>();
-    public static final int shift = 3;
+    private static final ArrayList<Character> artificialAlphabet = new ArrayList<Character>();
+    private static final int shift = 3;
 
-    public Caesar() {
+    static {
 
         for (char symbol = 'a'; symbol <= 'z'; symbol++) {
             artificialAlphabet.add(symbol);
@@ -29,23 +29,23 @@ public class Caesar {
         }
     }
 
-    public StringBuilder encript(String text){
-      StringBuilder encriptedText = new StringBuilder();
+    public static StringBuilder encrypt(String text){
+      StringBuilder encryptedText = new StringBuilder();
 
       for (int i = 0; i < text.length(); i++) {
           char symbol = text.charAt(i);
           int currentSymbolPosition = artificialAlphabet.indexOf(symbol);
 
           if (currentSymbolPosition >= 0) {
-              encriptedText.append(artificialAlphabet.get(findNewSymbolPositionForEncripting(currentSymbolPosition)));
+              encryptedText.append(artificialAlphabet.get(findNewSymbolPositionForEncrypting(currentSymbolPosition)));
           } else {
-              encriptedText.append(text.charAt(i));
+              encryptedText.append(text.charAt(i));
           }
       }
-      return encriptedText;
+      return encryptedText;
     }
 
-    private int findNewSymbolPositionForEncripting(int currentSymbolPosition){
+    private static int findNewSymbolPositionForEncrypting(int currentSymbolPosition){
 
         if (currentSymbolPosition <= artificialAlphabet.size() - shift - 1) {
             return currentSymbolPosition + 3;
@@ -54,23 +54,23 @@ public class Caesar {
         }
     }
 
-    public StringBuilder decrypt(String text){
-        StringBuilder encriptedText = new StringBuilder();
+    public static StringBuilder decrypt(String text){
+        StringBuilder decryptedText = new StringBuilder();
 
         for (int i = 0; i < text.length(); i++) {
             char symbol = text.charAt(i);
             int currentSymbolPosition = artificialAlphabet.indexOf(symbol);
 
             if (currentSymbolPosition >= 0) {
-                encriptedText.append(artificialAlphabet.get(findOldSymbolPositionForEncripting(currentSymbolPosition)));
+                decryptedText.append(artificialAlphabet.get(findOldSymbolPositionForEncrypting(currentSymbolPosition)));
             } else {
-                encriptedText.append( text.charAt(i));
+                decryptedText.append( text.charAt(i));
             }
         }
-        return encriptedText;
+        return decryptedText;
     }
 
-    private int findOldSymbolPositionForEncripting(int currentSymbolPosition){
+    private static int findOldSymbolPositionForEncrypting(int currentSymbolPosition){
 
         if (currentSymbolPosition <= shift - 1) {
             return artificialAlphabet.size() - shift + currentSymbolPosition;
@@ -79,11 +79,11 @@ public class Caesar {
         }
     }
 
-    public ArrayList<Character> getArtificialAlphabet() {
+    public static ArrayList<Character> getArtificialAlphabet() {
         return artificialAlphabet;
     }
 
-    public int getShift() {
+    public static int getShift() {
         return shift;
     }
 

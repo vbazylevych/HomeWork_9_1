@@ -66,13 +66,12 @@ public class MusicShop {
 
     public String[][] prepareDataForTable() {
         String[][] dataTable = new String[musicInstruments.size()][3];
-        Caesar caesar = new Caesar();
 
         for (int i = 0; i < musicInstruments.size(); i++) {
 
             dataTable[i][0] = musicInstruments.get(i).getProducer();
-            dataTable[i][1] = caesar.encript(dataTable[i][0]).toString();
-            dataTable[i][2] = caesar.decrypt(dataTable[i][1]).toString();
+            dataTable[i][1] = Caesar.encrypt(dataTable[i][0]).toString();
+            dataTable[i][2] = Caesar.decrypt(dataTable[i][1]).toString();
         }
         return dataTable;
     }
